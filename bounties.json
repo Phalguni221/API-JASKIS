@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "61d7b4ba48e875b63f67b443"
+  },
+  "name": "Lokinkajou",
+  "species": "Kinkajou",
+  "location": "Tropical rainforest",
+  "wantedFor": "Partying too late at night",
+  "reward": 1000,
+  "captured": false
+},{
+  "_id": {
+    "$oid": "61d7b4ba48e875b63f67b444"
+  },
+  "name": "Nebullama",
+  "species": "Llama",
+  "location": "Grasslands",
+  "wantedFor": "Drinking all the water from the ocean",
+  "reward": 2500,
+  "captured": false
+},{
+  "_id": {
+    "$oid": "61d7b4ba48e875b63f67b445"
+  },
+  "name": "Polarwind",
+  "species": "Polar Bear",
+  "location": "Arctic",
+  "wantedFor": "Not hibernating",
+  "reward": 4000,
+  "captured": false
+},{
+  "_id": {
+    "$oid": "61d7b4ba48e875b63f67b447"
+  },
+  "name": "Grandhog",
+  "species": "Groundhog",
+  "location": "Woodlands",
+  "wantedFor": "Not coming out of the hole on time and prolonging winter",
+  "reward": 50000,
+  "captured": false
+},{
+  "_id": {
+    "$oid": "61d7b4ba48e875b63f67b448"
+  },
+  "name": "Grim Panda",
+  "species": "Giant Panda",
+  "location": "Temperate forest",
+  "wantedFor": "Eating all the bamboo",
+  "reward": 5000,
+  "captured": false
+},{
+  "_id": {
+    "$oid": "61d7b99048e875b63f67b449"
+  },
+  "name": "Wrecking Crows",
+  "species": "Crow",
+  "location": "Grasslands",
+  "wantedFor": "Cawing too loudly",
+  "reward": 40000,
+  "captured": false
+}]
