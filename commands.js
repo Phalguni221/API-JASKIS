@@ -24,10 +24,32 @@ db.bounties.insertOne({
     captured: false,
 })
 
+Result:
+{
+  name: "Thanoceros",
+  species: "Rhinoceros",
+  location: "Grasslands",
+  wantedFor: "Eating too much grass",
+  client: "Songbird",
+  reward: 10000,
+  captured: false,
+}
+
 // 2. Query for all bounties in the bounties collection 
 
 Command:
 db.bounties.find({name:"Thanoceros"})
+{
+  name: "Thanoceros",
+  species: "Rhinoceros",
+  location: "Grasslands",
+  wantedFor: "Eating too much grass",
+  client: "Songbird",
+  reward: 10000,
+  captured: false,
+}
+
+Result:
 {
   name: "Thanoceros",
   species: "Rhinoceros",
@@ -97,6 +119,63 @@ Command: db.bounties.insertMany([
   }
 ])
 
+Result:
+[
+{
+  "name": "Lokinkajou",
+  "species": "Kinkajou",
+  "location": "Tropical rainforest",
+  "wantedFor": "Partying too late at night",
+  "client": "White tiger",
+  "reward": 1000,
+  "captured": false
+},
+{
+  "name": "Nebullama",
+  "species": "Llama",
+  "location": "Grasslands",
+  "wantedFor": "Drinking all the water from the ocean",
+  "client": "Songbird",
+  "reward": 2500,
+  "captured": false
+},
+{
+  "name": "Polarwind",
+  "species": "Polar Bear",
+  "location": "Arctic",
+  "wantedFor": "Not hibernating",
+  "client": "Sabertooth",
+  "reward": 4000,
+  "captured": false
+},
+{
+  "name": "Wrecking Crows",
+  "species": "Crow",
+  "location": "Grasslands",
+  "wantedFor": "Cawing too loudly",
+  "client": "Red wolf",
+  "reward": 40000,
+  "captured": false
+},
+{
+  "name": "Grandhog",
+  "species": "Groundhog",
+  "location": "Woodlands",
+  "wantedFor": "Not coming out of the hole on time and prolonging winter",
+  "client": "Songbird",
+  "reward": 50000,
+  "captured": false
+},
+{
+  "name": "Grim Panda",
+  "species": "Giant Panda",
+  "location": "Temperate forest",
+  "wantedFor": "Eating all the bamboo",
+  "client": "Red wolf",
+  "reward": 5000,
+  "captured": false
+}
+]
 
 // MANAGE THE DATABASE 
 // Queries
@@ -105,6 +184,7 @@ Command: db.bounties.insertMany([
 Command: 
 db.bounties.find({location: "Grasslands"})
 
+Result:
 { 
   _id: ObjectId("61d783fa338d8de9e92f73ad"),
   name: 'Nebullama',
@@ -132,6 +212,7 @@ db.bounties.find({location: "Grasslands"})
 Command:
 db.bounties.find({reward: {$gte:10000}})
 
+Result:
 { 
   _id: ObjectId("61d783fa338d8de9e92f73af"),
   name: 'Wrecking Crows',
@@ -269,14 +350,25 @@ db.bounties.updateOne({name: "Polarwind"}, {$set:{reward:10000}})
   upsertedCount: 0 
 }
 
+Result:
+{
+  name: "Polarwind",
+  species: "Polar Bear",
+  location: "Arctic",
+  wantedFor: "Not hibernating",
+  client: "Sabertooth",
+  reward: 10000,
+  captured: false
+}
+
 // 2. Remove Lokinkajou 
 
 Command:
-db.bounties.deleteOne({species:"Kinkajou"})
+db.bounties.deleteOne({name:"Lokinkajou"})
 
 { acknowledged: true, deletedCount: 1 }
 
-    // (Kinkajou is not part of the bounty list)
+// (Kinkajou is not part of the bounty list anymore)
 
 
 // 3. Delete all bounties sent by Songbird 
